@@ -1,0 +1,37 @@
+.home_form {
+  &_title {
+    h2 {
+      font-weight: 300;
+      font-size: 28px;
+      line-height: 36px;
+      margin: 0 0 8px;
+      color: #494F66;
+
+      span {
+        color: #EF3340;
+        font-weight: 400;
+      }
+    }
+    p {
+      margin: 0 0 24px;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 28px;
+      color: #676F8F;
+    }
+  }
+
+  .checkbox_label {
+    width: calc(100% - 40px);
+    color: #A3ABCC;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 20px;
+    margin: 0;
+
+    span {
+      font-weight: 400;
+      text-decoration: underline;
+    }
+  }
+}

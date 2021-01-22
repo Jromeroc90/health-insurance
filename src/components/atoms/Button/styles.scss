@@ -1,0 +1,16 @@
+.button_rimac {
+  display: inline-block;
+  cursor: pointer;
+  background-color: #EF3340;
+  padding: 20px 30px;
+  font-weight: 700;
+  font-size: 14px;
+  color: white;
+  border-radius: 8px;
+
+  &.disabled {
+    background-color: #F0F2FA;
+    color: #C5CBE0;
+    cursor: not-allowed;
+  }
+}

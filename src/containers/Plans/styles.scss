@@ -1,0 +1,160 @@
+.plan_form {
+  margin: 0 10%;
+
+  &_navigate {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 0 0 35px;
+
+    img {
+      position: absolute;
+      left: -35px;
+      cursor: pointer;
+    }
+
+    p {
+      font-size: 12px;
+      line-height: 16px;
+      color: #A3ABCC;
+
+      span {
+        color: #EF3340;
+      }
+    }
+  }
+
+  &_title {
+    h2 {
+      font-weight: 300;
+      font-size: 40px;
+      line-height: 48px;
+      margin: 0 0 12px;
+      color: #494F66;
+
+      span {
+        color: #EF3340;
+        font-weight: 400;
+      }
+    }
+
+    p {
+      margin: 0 0 48px;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 28px;
+      color: #676F8F;
+    }
+  }
+
+  &_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+
+  &_summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 0;
+    border-bottom: 1px solid #E4E8F7;
+    margin-bottom: 14px;
+
+    p {
+      font-weight: 300;
+      font-family: Roboto, sans-serif;
+      font-size: 14px;
+      line-height: 24px;
+      color: #676F8F;
+    }
+
+    > div {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      span {
+        font-size: 10px;
+        line-height: 16px;
+        color: #A3ABCC;
+        margin-right: 5px;
+      }
+    }
+  }
+
+  &_total {
+    display: flex;
+    justify-content: space-between;
+    padding: 24px 0;
+    border-top: 1px dashed #A3ABCC;
+
+    p {
+      margin: 0;
+      font-size: 12px;
+      line-height: 16px;
+      color: #494F66;
+    }
+
+    span {
+      font-size: 32px;
+      line-height: 40px;
+      font-weight: 300;
+      color: #494F66;
+    }
+  }
+
+  &_tyc {
+    &-title, &-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #E4E8F7;
+
+      h2 {
+        flex: 1;
+        margin: 0;
+        font-size: 20px;
+        line-height: 28px;
+        font-weight: 300;
+        color: #494F66;
+
+        span {
+          font-weight: 400;
+          color: #EF3340;
+        }
+      }
+    }
+
+    &-item {
+      padding: 24px 0;
+      cursor: pointer;
+
+      h2 {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+
+    .text {
+      font-size: 12px;
+      line-height: 20px;
+      padding: 14px 0;
+    }
+  }
+
+  &_buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 40px;
+
+    .send-button {
+      cursor: pointer;
+      color: #939DFF;
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+}

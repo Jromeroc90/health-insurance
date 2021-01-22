@@ -1,0 +1,87 @@
+.layout-small {
+
+  @media only screen and (min-width: 1024px) {
+    height: 100vh;
+  }
+
+  .bg-left {
+    width: 100%;
+    height: 60px;
+    top: 0;
+    transform: skew(-2deg, 0);
+    position: relative;
+    overflow: visible;
+    background-color: #EF3340;
+    z-index: 1;
+
+    .container_image {
+      display: none;
+    }
+
+    .logo_wrapper {
+      padding: 20px;
+    }
+
+    hr {
+      display: none;
+      position: absolute;
+      margin: 0;
+      border: .5px solid #f55d68;
+      width: 100%;
+      top: 64px;
+      left: -4px;
+    }
+
+    @media only screen and (min-width: 1024px) {
+      left: -50px;
+      width: 33%;
+      height: 100vh;
+      position: fixed;
+      border-radius: 0 0 80px 0;
+
+      hr {
+        display: block;
+      }
+
+      .logo_wrapper {
+        padding: 0;
+        position: relative;
+        top: 23px;
+        left: calc(100% - 244px);
+      }
+
+      .container_image {
+        display: block;
+        position: absolute;
+        top: 18%;
+        left: calc(100% - 235px);
+      }
+    }
+  }
+
+  &_container {
+    width: 100%;
+    margin: 0 auto;
+
+    @media only screen and (min-width: 1024px) {
+      max-width: 1180px;
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      padding: 64px 0;
+
+      &_form {
+        width: 90%;
+        margin: 0 auto;
+
+        @media only screen and (min-width: 1024px) {
+          width: 60%;
+          margin: 0 5% 0 35%;
+        }
+      }
+    }
+  }
+}

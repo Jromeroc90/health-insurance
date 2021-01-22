@@ -1,0 +1,32 @@
+.price_row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+
+  p {
+    font-size: 16px;
+    line-height: 24px;
+    color: #494F66;
+    margin: 0;
+  }
+
+  > div {
+    display: flex;
+    align-items: flex-end;
+
+    span {
+      font-size: 12px;
+      line-height: 24px;
+      color: #494F66;
+      margin-right: 3px;
+    }
+
+    h6 {
+      font-size: 20px;
+      line-height: 28px;
+      color: #494F66;
+      margin: 0;
+    }
+  }
+}

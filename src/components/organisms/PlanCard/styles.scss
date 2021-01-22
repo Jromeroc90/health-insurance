@@ -1,0 +1,121 @@
+.plan_card {
+  margin: 24px 0 40px;
+  width: 100%;
+  border: 3px solid #F0F2FA;
+  border-radius: 12px;
+
+  &_title {
+    width: 100%;
+    padding: 8px;
+    color: #676F8F;
+    font-size: 14px;
+    line-height: 24px;
+    font-family: Roboto, sans-serif;
+    text-align: center;
+    background-color: #F0F2FA;
+  }
+
+  &_body {
+    padding: 32px 40px;
+
+    &-head {
+      display: flex;
+      align-items: center;
+      padding-bottom: 28px;
+      border-bottom: 1px solid #E4E8F7;
+
+      > div:first-child {
+        flex: 1;
+      }
+
+      h2, h3 {
+        margin: 0;
+        color: #494F66;
+      }
+
+      h2 {
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 8px;
+      }
+
+      h3 {
+        font-size: 28px;
+        line-height: 36px;
+        margin-bottom: 18px;
+      }
+
+      .pill {
+        display: inline-block;
+        padding: 2px 8px;
+        color: white;
+        background-color: #83CC5E;
+        border-radius: 20px;
+        font-size: 10px;
+        line-height: 16px;
+      }
+
+      .image {
+        padding-left: 60px;
+        border-left: 1px solid #E4E8F7;
+      }
+    }
+
+    &-benefits {
+      padding-top: 40px;
+
+      .allowed_benefit {
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        img {
+          width: 16px;
+          height: 16px;
+          margin-right: 13px;
+        }
+
+        span {
+          font-size: 20px;
+          line-height: 32px;
+          color: #494F66;
+
+          &.sub {
+            align-self: flex-end;
+            font-size: 12px;
+            line-height: 27px;
+            margin-left: 5px;
+          }
+        }
+      }
+
+      .not-allowed_benefit {
+        display: flex;
+        align-items: center;
+        margin-bottom: 16px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        img {
+          width: 16px;
+          height: 16px;
+          margin-right: 13px;
+        }
+
+        span {
+          font-weight: 300;
+          font-size: 14px;
+          line-height: 24px;
+          color: #A3ABCC;
+          text-decoration: line-through;
+        }
+      }
+    }
+  }
+}

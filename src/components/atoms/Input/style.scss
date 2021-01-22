@@ -1,0 +1,60 @@
+.field {
+  position: relative;
+  display: flex;
+  flex: 1;
+
+  input {
+    font-size: 16px;
+    line-height: 24px;
+    padding: 24px 16px 8px;
+    color: #494f66;
+    border: 1px solid #C5CBE0;
+    border-radius: 4px;
+    background-color: transparent;
+    z-index: 1;
+
+    &:focus {
+      outline: none;
+
+      + label {
+        font-size: 12px;
+        transform: translateY(-12px);
+      }
+    }
+
+    &.error {
+      border-color: #FF757A;
+    }
+
+    &.calendar {
+      background-image: url('../../../assets/images/inputs/calendar.png');
+      background-repeat: no-repeat;
+      background-size: 16px;
+      background-position: 90%;
+      background-position-x: calc(100% - 15px);
+    }
+  }
+
+  label {
+    z-index: -1;
+    font-size: 16px;
+    line-height: 24px;
+    display: block;
+    position: absolute;
+    color: #A3ABCC;
+    transition: 0.2s ease-in-out all;
+    top: 16px;
+    left: 16px;
+
+    &.active {
+      font-size: 12px;
+      transform: translateY(-12px);
+    }
+  }
+
+  &.compose {
+    input {
+      border-radius: 0 4px 4px 0;
+    }
+  }
+}

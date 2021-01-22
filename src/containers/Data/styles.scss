@@ -1,0 +1,86 @@
+.data_form {
+  margin: 0 10%;
+
+  &_navigate {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 0 0 35px;
+
+    img {
+      position: absolute;
+      left: -35px;
+      cursor: pointer;
+    }
+
+    p {
+      font-size: 12px;
+      line-height: 16px;
+      color: #A3ABCC;
+
+      span {
+        color: #EF3340;
+      }
+    }
+  }
+
+  &_title {
+    h2 {
+      font-weight: 300;
+      font-size: 40px;
+      line-height: 48px;
+      margin: 0 0 12px;
+      color: #494F66;
+
+      span {
+        color: #EF3340;
+        font-weight: 400;
+      }
+    }
+
+    p {
+      margin: 0 0 48px;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 28px;
+      color: #676F8F;
+    }
+  }
+
+  .input_label {
+    margin: 0 0 16px;
+    color: #494F66;
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 300;
+
+    &.small {
+      margin-top: 24px;
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  .relation_form {
+    display: flex;
+    width: 100%;
+    align-items: center;
+
+    &_inputs {
+      width: 80%;
+    }
+
+    &_button {
+      cursor: pointer;
+      width: 20%;
+      color: #939DFF;
+      text-align: center;
+    }
+  }
+
+  .button_container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 16px;
+  }
+}

@@ -1,0 +1,10 @@
+.dropdown {
+  max-height: 0;
+  width: 100%;
+  overflow: hidden;
+  transition: 0.25s ease-in all;
+
+  &.open {
+    max-height: 1000px;
+  }
+}

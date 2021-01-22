@@ -1,0 +1,30 @@
+.compose_field {
+  display: flex;
+  position: relative;
+
+  select {
+    width: 30%;
+    color: #494f66;
+    padding: 16px 40px 16px 16px;
+    border: 1px solid #C5CBE0;
+    border-right: 0;
+    border-radius: 4px 0 0 4px;
+    background-color: white;
+    background-image: url('../../../assets/images/inputs/chevrot.png');
+    background-repeat: no-repeat;
+    background-size: 10px;
+    background-position: 90%;
+    background-position-x: calc(100% - 8px);
+    -webkit-appearance: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &.error {
+    select {
+      border-color: #FF757A;
+    }
+  }
+}
