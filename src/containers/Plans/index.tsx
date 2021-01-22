@@ -167,7 +167,7 @@ const Plans: React.FC = () => {
         <div className='plan_form_tyc'>
           <div className='plan_form_tyc-title'>
             <h2>Revisa nuestros<br/><span>servicios y exclusiones</span></h2>
-            <img src={Guy} alt='image'/>
+            <img src={Guy} alt='check_guy'/>
           </div>
 
           <div

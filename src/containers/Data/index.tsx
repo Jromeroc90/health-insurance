@@ -94,7 +94,7 @@ const Data: React.FC = () => {
         setDisabled(true);
       }
     }
-  }, [form, relations]);
+  }, [form, relations, state.new]);
 
   const handleAddRelation = () => {
     let isValid = true;

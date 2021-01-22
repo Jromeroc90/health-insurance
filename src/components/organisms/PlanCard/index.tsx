@@ -42,7 +42,7 @@ const benefits = [
 ]
 
 const data = {
-  ['básico']: {
+  básico: {
     total: 1,
     benefits: ['lima', 'clinic']
   },
