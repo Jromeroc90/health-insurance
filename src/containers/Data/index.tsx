@@ -5,6 +5,7 @@ import { SelectWithInput, FamilyRow } from '../../components/molecules';
 import { SmallLayout } from '../../components/organisms';
 import { dateValidation, documentValidation } from '../../util/functions';
 import Back from '../../assets/images/icons/back.png';
+import Plus from '../../assets/images/icons/plus.png';
 import './styles.scss';
 
 type StateType = {
@@ -51,13 +52,13 @@ const Data: React.FC = () => {
   const { state } = useLocation<StateType>();
   const [disabled, setDisabled] = useState<boolean>(true);
   const [form, setForm] = useState({
-    name: state.name || '',
-    last_name: state.last_name || '',
-    maternal_name: state.maternal_name || '',
-    document_type: state.document_type || 'dni',
-    document_number: state.document_number || '',
-    birthday: state.birthday || '',
-    genre: state.genre || '',
+    name: (state && state.name) || '',
+    last_name: (state && state.last_name) || '',
+    maternal_name: (state && state.maternal_name) || '',
+    document_type: (state && state.document_type) || 'dni',
+    document_number: (state && state.document_number) || '',
+    birthday: (state && state.birthday) || '',
+    genre: (state && state.genre) || '',
     insurance: '',
   });
   const [errors, setErrors] = useState({
@@ -73,7 +74,7 @@ const Data: React.FC = () => {
   const [relations, setRelations] = useState<Array<RelationType>>([]);
 
   useEffect(() => {
-    if (state.new) {
+    if (state && state.new) {
       if (
         (form.name && form.insurance && form.insurance !== 'family')
         || (form.name && form.insurance && form.insurance === 'family' && relations.length > 0)
@@ -94,7 +95,7 @@ const Data: React.FC = () => {
         setDisabled(true);
       }
     }
-  }, [form, relations, state.new]);
+  }, [form, relations, state]);
 
   const handleAddRelation = () => {
     let isValid = true;
@@ -154,6 +155,7 @@ const Data: React.FC = () => {
     }
 
     history.push('/planes', {
+      ...state,
       relations,
     });
   }
@@ -347,6 +349,11 @@ const Data: React.FC = () => {
                   error={famFormError}
                 />
               </div>
+              <img
+                src={Plus}
+                alt='plus_button'
+                onClick={() => handleAddRelation()}
+              />
               <span
                 className='relation_form_button'
                 onClick={() => handleAddRelation()}

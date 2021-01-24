@@ -56,8 +56,10 @@
       }
 
       .image {
-        padding-left: 60px;
-        border-left: 1px solid #E4E8F7;
+        @media only screen and (min-width: 1024px) {
+          padding-left: 60px;
+          border-left: 1px solid #E4E8F7;
+        }
       }
     }
 

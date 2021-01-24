@@ -16,12 +16,20 @@ type RelationType = {
 }
 
 type StateType = {
+  new: boolean;
+  document_type?: string;
+  document_number?: string;
+  name?: string;
+  last_name?: string;
+  maternal_name?: string;
+  birthday?: string;
+  genre?: string;
   relations: Array<RelationType>;
 };
 
 const Plans: React.FC = () => {
   const history = useHistory();
-  const {state} = useLocation<StateType>();
+  const { state } = useLocation<StateType>();
 
   const [openServices, setOpenServices] = useState<boolean>(false);
   const [openExclusions, setOpenExclusions] = useState<boolean>(false);
@@ -58,39 +66,41 @@ const Plans: React.FC = () => {
     let children = 0;
     let partners = 0;
 
-    state.relations.forEach(relation => {
-      if (relation.relation === 'partner') {
-        partners += 1;
-      } else if (relation.relation === 'child') {
-        children += 1;
-      }
-    });
+    if (state && state.relations) {
+      state.relations.forEach(relation => {
+        if (relation.relation === 'partner') {
+          partners += 1;
+        } else if (relation.relation === 'child') {
+          children += 1;
+        }
+      });
 
-    setPlans([
-      {
-        name: 'básico',
-        price: (1 + partners) * 60 + (children) * 40,
-        base: 40,
-      },
-      {
-        name: 'avanzado',
-        price: (1 + partners) * 80 + (children) * 60,
-        base: 60,
-      },
-      {
-        name: 'premium',
-        price: (1 + partners) * 100 + (children) * 80,
-        base: 80,
-      },
-      {
-        name: 'full',
-        price: (1 + partners) * 120 + (children) * 100,
-        base: 100,
-      },
-    ]);
-    setQuantity(1 + partners + children);
-    setPartners(partners);
-    setChildren(children);
+      setPlans([
+        {
+          name: 'básico',
+          price: (1 + partners) * 60 + (children) * 40,
+          base: 40,
+        },
+        {
+          name: 'avanzado',
+          price: (1 + partners) * 80 + (children) * 60,
+          base: 60,
+        },
+        {
+          name: 'premium',
+          price: (1 + partners) * 100 + (children) * 80,
+          base: 80,
+        },
+        {
+          name: 'full',
+          price: (1 + partners) * 120 + (children) * 100,
+          base: 100,
+        },
+      ]);
+      setQuantity(1 + partners + children);
+      setPartners(partners);
+      setChildren(children);
+    }
   }, [state]);
 
   const handleBuy = () => {
@@ -100,7 +110,7 @@ const Plans: React.FC = () => {
   }
 
   if (!state) {
-    return <Redirect to='/'/>;
+    return <Redirect to='/' />;
   }
 
   return (
@@ -110,7 +120,9 @@ const Plans: React.FC = () => {
           <img
             src={Back}
             alt='back_button'
-            onClick={() => history.replace('/data')}
+            onClick={() => history.replace('/datos', {
+              ...state,
+            })}
           />
           <p><span>PASO 2</span> DE 7</p>
         </div>
@@ -121,18 +133,20 @@ const Plans: React.FC = () => {
         </div>
 
         <div className='plan_form_wrapper'>
-          {plans.map(plan => (
-            <PlanBox
-              key={plan.name}
-              selected={plan.name === selectedPlan}
-              name={plan.name}
-              price={plan.price}
-              onClick={() => {
-                setSelectedPlan(plan.name);
-                setBasePrice(plan.base);
-              }}
-            />
-          ))}
+          <div>
+            {plans.map(plan => (
+              <PlanBox
+                key={plan.name}
+                selected={plan.name === selectedPlan}
+                name={plan.name}
+                price={plan.price}
+                onClick={() => {
+                  setSelectedPlan(plan.name);
+                  setBasePrice(plan.base);
+                }}
+              />
+            ))}
+          </div>
         </div>
 
         <div className='plan_form_summary'>
@@ -213,7 +227,6 @@ const Plans: React.FC = () => {
             disabled={!selectedPlan}
             onClick={() => handleBuy()}
             label='COMPRAR PLAN'
-            margin='0 0 0 20px'
           />
         </div>
       </div>

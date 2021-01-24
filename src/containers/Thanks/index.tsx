@@ -1,9 +1,10 @@
 import React from 'react';
 import { Redirect, useLocation, useHistory } from 'react-router-dom';
+import { Button } from '../../components/atoms';
 import { SmallLayout } from '../../components/organisms';
 import ThanksImg from '../../assets/images/thanks.png';
+import ThanksBanner from '../../assets/images/thanks_banner.png';
 import './styles.scss';
-import { Button } from '../../components/atoms';
 
 type StateProps = {
   link: boolean;
@@ -19,7 +20,16 @@ const Thanks: React.FC = () => {
   return (
     <SmallLayout>
       <div className='thanks_container'>
-        <img src={ThanksImg} alt='thanks'/>
+        <img
+          className='mobile_image'
+          src={ThanksBanner}
+          alt='banner'
+        />
+        <img
+          className='desktop_image'
+          src={ThanksImg}
+          alt='thanks'
+        />
 
         <div className='thanks_title'>
           <h2>¡Gracias por <span>confiar en nosotros!</span></h2>
@@ -28,7 +38,10 @@ const Thanks: React.FC = () => {
         </div>
 
         <div className='thanks_button'>
-          <Button onClick={() => history.push('/')} label='IR A SALUD RIMAC' />
+          <Button
+            onClick={() => history.push('/')}
+            label='IR A SALUD RIMAC'
+          />
         </div>
       </div>
     </SmallLayout>

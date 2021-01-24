@@ -93,13 +93,13 @@
       }
 
       &_content {
-        width: 100%;
+        width: 50%;
         margin: 0 8% 0 0;
 
         .title {
           margin: 0 0 32px;
-          font-size: 48px;
-          line-height: 60px;
+          font-size: 32px;
+          line-height: 40px;
           font-weight: 300;
           color: white;
         }
@@ -113,31 +113,83 @@
           display: none;
         }
 
-        ul {
-          display: block;
+        .slider-container {
+          margin-bottom: 150px;
+          &_control {
+            display: flex;
+            align-items: center;
+
+            img {
+              margin-left: 10px;
+              &.button_prev {
+                margin-right: 10px;
+                transform: rotate(180deg);
+              }
+            }
+
+            p {
+              color: #FC606B;
+              font-size: 12px;
+              line-height: 14px;
+
+              span {
+                color: white;
+              }
+            }
+          }
+        }
+
+        ul.desktop_list {
+          display: none;
+          flex-wrap: nowrap;
           list-style: none;
           padding: 0;
           margin: 0 0 100px;
+        }
 
-          li {
-            display: flex;
-            align-items: center;
-            color: white;
-            margin: 0 0 16px;
-            font-weight: 300;
-            font-size: 16px;
-            line-height: 26px;
+        &_benefit-item {
+          display: block;
+          align-items: center;
+          color: white;
+          margin: 0;
+          font-weight: 300;
+          font-size: 16px;
+          line-height: 26px;
 
-            img {
-              margin-right: 8px;
-              width: 20px;
-              height: 20px;
-            }
+          img {
+            display: block;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            width: 20px;
+            height: 20px;
           }
         }
 
         @media only screen and (min-width: 1024px) {
           width: 30%;
+
+          &_benefit-item {
+            display: flex;
+            margin: 0 0 16px;
+
+            img {
+              display: inline-block;
+              margin-bottom: 0;
+            }
+          }
+
+          .slider-container {
+            display: none;
+          }
+
+          ul.desktop_list {
+            display: block;
+          }
+
+          .title {
+            font-size: 48px;
+            line-height: 60px;
+          }
 
           .signature {
             display: block;

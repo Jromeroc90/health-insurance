@@ -6,6 +6,11 @@
   margin: 0 5px;
   padding: 24px 16px;
   cursor: pointer;
+  min-width: 180px;
+
+  @media only screen and (min-width: 1024px) {
+    min-width: auto;
+  }
 
   &.selected {
     border-color: #83CC5E;

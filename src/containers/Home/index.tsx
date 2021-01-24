@@ -200,12 +200,13 @@ const Home: React.FC = () => {
           }
         />
 
-        <Button
-          disabled={disabled}
-          onClick={() => handleValidate()}
-          label='COMENCEMOS'
-          margin='25px 0 0'
-        />
+        <div className='home_form_button'>
+          <Button
+            disabled={disabled}
+            onClick={() => handleValidate()}
+            label='COMENCEMOS'
+          />
+        </div>
       </div>
     </Layout>
   );

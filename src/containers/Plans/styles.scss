@@ -1,5 +1,9 @@
 .plan_form {
-  margin: 0 10%;
+  margin: 0;
+
+  @media only screen and (min-width: 1024px) {
+    margin: 0 10%;
+  }
 
   &_navigate {
     position: relative;
@@ -8,7 +12,8 @@
     margin: 0 0 35px;
 
     img {
-      position: absolute;
+      position: static;
+      margin-right: 10px;
       left: -35px;
       cursor: pointer;
     }
@@ -20,6 +25,12 @@
 
       span {
         color: #EF3340;
+      }
+    }
+
+    @media only screen and (min-width: 1024px) {
+      img {
+        position: absolute;
       }
     }
   }
@@ -48,10 +59,21 @@
   }
 
   &_wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     margin-bottom: 16px;
+    overflow: auto;
+
+    > div {
+      width: 760px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @media only screen and (min-width: 1024px) {
+      > div {
+        width: auto;
+      }
+    }
   }
 
   &_summary {
@@ -145,16 +167,40 @@
   }
 
   &_buttons {
-    display: flex;
+    display: block;
     justify-content: flex-end;
     align-items: center;
     margin-top: 40px;
 
     .send-button {
+      display: block;
+      padding: 20px;
+      margin-bottom: 24px;
+      width: 100%;
+      text-align: center;
       cursor: pointer;
       color: #939DFF;
       font-size: 12px;
       line-height: 16px;
+    }
+
+    > div {
+      width: 100%;
+    }
+
+    @media only screen and (min-width: 1024px) {
+      display: flex;
+
+      .send-button {
+        width: auto;
+        padding: 0;
+        margin-bottom: 0;
+        margin-right: 30px;
+      }
+
+      > div {
+        width: auto;
+      }
     }
   }
 }

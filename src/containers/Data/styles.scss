@@ -1,5 +1,9 @@
 .data_form {
-  margin: 0 10%;
+  margin: 0;
+
+  @media only screen and (min-width: 1024px) {
+    margin: 0 10%;
+  }
 
   &_navigate {
     position: relative;
@@ -8,7 +12,8 @@
     margin: 0 0 35px;
 
     img {
-      position: absolute;
+      position: static;
+      margin-right: 10px;
       left: -35px;
       cursor: pointer;
     }
@@ -20,6 +25,12 @@
 
       span {
         color: #EF3340;
+      }
+    }
+
+    @media only screen and (min-width: 1024px) {
+      img {
+        position: absolute;
       }
     }
   }
@@ -67,20 +78,48 @@
     align-items: center;
 
     &_inputs {
-      width: 80%;
+      flex: 1;
+    }
+
+    img {
+      margin-left: 15px;
+      cursor: pointer;
     }
 
     &_button {
+      display: none;
       cursor: pointer;
       width: 20%;
       color: #939DFF;
       text-align: center;
+    }
+
+    @media only screen and (min-width: 1024px) {
+      img {
+        display: none;
+      }
+
+      &_inputs {
+        width: 80%;
+      }
+
+      &_button {
+        display: block;
+      }
     }
   }
 
   .button_container {
     display: flex;
     justify-content: flex-end;
-    margin-top: 16px;
+    margin-top: 24px;
+
+    > div {
+      width: 100%;
+
+      @media only screen and (min-width: 1024px) {
+        width: auto;
+      }
+    }
   }
 }

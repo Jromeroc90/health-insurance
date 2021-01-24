@@ -3,10 +3,30 @@
   max-width: 475px;
   margin: 0 auto;
 
-  img {
+  .mobile_image {
+    display: block;
+    width: 112%;
+    height: auto;
+    top: -65px;
+    position: relative;
+    left: -6%;
+  }
+
+  .desktop_image {
+    display: none;
     width: 100%;
     height: auto;
     margin-bottom: 24px;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    .mobile_image {
+      display: none;
+    }
+
+    .desktop_image {
+      display: block;
+    }
   }
 
   .thanks_title {
@@ -36,5 +56,13 @@
   .thanks_button {
     display: flex;
     justify-content: flex-end;
+
+    > div {
+      width: 100%;
+
+      @media only screen and (min-width: 1024px) {
+        width: auto;
+      }
+    }
   }
 }

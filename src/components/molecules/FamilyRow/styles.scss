@@ -25,10 +25,24 @@
     color: #A9B1D1;
   }
 
+  img {
+    display: block;
+  }
+
   &_delete {
+    display: none;
     width: 20%;
     text-align: center;
     cursor: pointer;
     color: #939DFF;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    img {
+      display: none;
+    }
+    &_delete {
+      display: block;
+    }
   }
 }
